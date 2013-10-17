@@ -78,8 +78,9 @@ public class NingAsyncClientHttpRequest extends PublicAbstractBufferingAsyncClie
         }
         boundRequestBuilder = boundRequestBuilder.setHeaders(headersMap);
 
-        //boundRequestBuilder = boundRequestBuilder.addBodyPart(new ByteArrayPart("body", "body", bufferedOutput, null, null));
-        boundRequestBuilder = boundRequestBuilder.setBody(bufferedOutput);
+        if (bufferedOutput.length > 0) {
+            boundRequestBuilder = boundRequestBuilder.setBody(bufferedOutput);
+        }
         org.asynchttpclient.ListenableFuture<Response> ningResponse = boundRequestBuilder.execute();
         ListenableFuture<Response> springResponse =
                 new NingListenableFutureToSpringListenableFuture<Response>(ningResponse);
