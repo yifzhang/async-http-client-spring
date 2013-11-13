@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <spring.version>4.0.0.BUILD-20131016.161344-295</spring.version>
+        <spring.version>4.0.0.RC1</spring.version>
         <async-httpclient.version>2.0.0-SNAPSHOT</async-httpclient.version>
         <jetty.version>8.1.5.v20120716</jetty.version>
     </properties>
